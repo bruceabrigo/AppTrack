@@ -1,7 +1,6 @@
 .homebox {
-    margin-top: 75px;
     position: relative;
-    border: 2px solid #B2B2B2;
+    box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.10);
     border-radius: 15px;
     width: 80vw;
     height: 60vh;
@@ -14,4 +13,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .content-bar {
+    display: flex;
+    align-items: center;
+    height: 85px;
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+    background-color: #2B6777;
+  }
+
+  .content-bar-title {
+    display: flex;
+    margin: 0;
+    position: fixed;
+    color: #fff;
+    font-size: 24px;
+    padding-left: 25px;
+  }
+
+  .new-application {
+    width: 250px;
+    height: 62px;    
+    border-radius: 15px;
+    margin: 50px 0px 50px 315px;
   }

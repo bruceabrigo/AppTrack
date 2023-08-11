@@ -5,11 +5,18 @@ const Home = (props) => {
   console.log("props in home: ", props);
 
   return (
+    <>
+    <button className="new-application">
+        New Application
+    </button>
     <div className="centered-content">
       <div className="homebox">
-          <h1>hello</h1>
+        <div className="content-bar">
+            <h1 className="content-bar-title">Applications</h1>
+        </div>
       </div>
     </div>
+    </>
   );
 };
 
