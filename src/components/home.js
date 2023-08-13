@@ -36,8 +36,8 @@ const Home = (props) => {
     <div key={application.id} className="applications">
       <p>{application.company}</p>
       <p>{application.role}</p>
-      <p>{application.submitted}</p>
-      <p>{application.interview}</p>
+      <p>{application.submitted ? 'Yes' : 'No'}</p>
+      <p>{application.interview ? 'Yes' : 'No'}</p>
     </div>
   ));
   
