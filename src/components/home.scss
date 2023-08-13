@@ -40,11 +40,9 @@
   }
 
   .applications {
-    margin: 25px;
-    padding-left: 0;
-    padding-bottom: 15px;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    text-align: center;
     list-style: none;
-    border-bottom: 1px solid black;
+    // border: 1px dashed black;
   }
