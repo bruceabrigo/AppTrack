@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react'
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Switch } from 'react-router-dom';
 import Navbar from './components/shared/navbar';
 import Home from './components/home';
 import LogIn from './components/auth/login';
@@ -17,11 +17,16 @@ const App = () => {
 	}
  return (
   <>
-    <Navbar user={user} />
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/signin' element={<LogIn/>}/>
-      </Routes>
+    <Routes>
+        <Route path="/" element={
+            <>
+              <Navbar user={user} />
+              <Home />
+            </>
+          }
+        />
+        <Route path="/signin" element={<LogIn />} />
+    </Routes>
   </>
  )
 }

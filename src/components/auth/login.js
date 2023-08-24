@@ -32,11 +32,12 @@ const LogIn = (props) => {
     }
 
     return (
-        <>
+        <div className="background">
+            <h1 className="greeting">Nice to See You Again!</h1>
             <div className="login">
-                <h1>Sign In Page</h1>
+                <h1>Welcome Back!</h1>
             </div>
-        </>
+        </div>
     )
 }
 
