@@ -25,7 +25,7 @@ const App = () => {
             </>
           }
         />
-        <Route path="/signin" element={<LogIn />} />
+        <Route path="/signin" element={<LogIn setUser={setUser}/>} />
     </Routes>
   </>
  )

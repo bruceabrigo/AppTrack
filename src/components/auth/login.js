@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 import { signIn } from "../../api/auth";
 import './login.scss'
 
@@ -21,17 +21,15 @@ const LogIn = (props) => {
 
         signIn(credentials)
             .then((res) => setUser(res.data.user))
-			// .then(() =>
-			// 	msgAlert({
-			// 		heading: 'Sign In Success',
-			// 		variant: 'success',
-			// 	})
-			// )
-            .then(() => navigate('/'))
-            .catch((error) => {
-                setEmail('')
-                setPassword('')
+            .then(() => {
+                console.log('Redirecting...');
+                navigate('/');
             })
+            .catch((error) => {
+                console.error('Error during sign in:', error);
+                setEmail('');
+                setPassword('');
+            });
     }
 
     return (
