@@ -4,6 +4,7 @@ import { signIn } from "../../api/auth";
 import './login.scss'
 
 import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 const LogIn = (props) => {
     const [email, setEmail] = useState('')
@@ -14,18 +15,18 @@ const LogIn = (props) => {
     const onLogIn = (event) => {
         event.preventDefault()
         console.log('SignIn Props: ', props)
-        const {msgAlert, setUser} = props
+        const {setUser} = props
 
         const credentials = {email, password}
 
         signIn(credentials)
             .then((res) => setUser(res.data.user))
-			.then(() =>
-				msgAlert({
-					heading: 'Sign In Success',
-					variant: 'success',
-				})
-			)
+			// .then(() =>
+			// 	msgAlert({
+			// 		heading: 'Sign In Success',
+			// 		variant: 'success',
+			// 	})
+			// )
             .then(() => navigate('/'))
             .catch((error) => {
                 setEmail('')
@@ -46,10 +47,22 @@ const LogIn = (props) => {
                                 type='email'
                                 name='email'
                                 value={email}
-                                placeholder='Your Email'
+                                placeholder='Enter your email'
                                 onChange={e => setEmail(e.target.value)}
                             />
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control
+                                required
+                                type='password'
+                                name='password'
+                                value={password}
+                                placeholder='Enter your password'
+                                onChange={e => setPassword(e.target.value)}
+                            />
                         </Form.Group>
+                        <Button className="m-2" variant='primary' type='submit'>
+                            Login
+                        </Button>
                     </Form>
             </div>
         </div>
