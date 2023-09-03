@@ -3,7 +3,7 @@ import './signout.scss'
 
 // import api
 import { signOut } from "../../api/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignOut = (props) => {
     const {clearUser, user} = props
@@ -13,17 +13,15 @@ const SignOut = (props) => {
 
     const onSignOut = () => {
         signOut(user)
-            .finally(() => navigate('/'))
+            .finally(() => navigate('/signin'))
             .finally(() => clearUser())
-    }
-
-    const onCancel = () => {
-        navigate('/')
     }
 
     return (
         <>
-            <h1>SignOut Page</h1>
+            <h1>Are you sure you want to sign out?</h1>
+            <Link to="/">Back</Link>
+            <button onClick={onSignOut}>Sign out</button>
         </>
     )
 }
